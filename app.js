@@ -7,6 +7,10 @@ import themesRoutes from "./routes/themesRoutes.js";
 import mediaRoutes from "./routes/mediaRoutes.js"
 
 
+import dotenv from "dotenv";
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 
 
 const app = express() 
@@ -25,7 +29,7 @@ app.use("/api/mediatypes" , mediaRoutes)
 
 
 
-app.listen(3000 , (err)=>{
+app.listen( PORT, (err)=>{
     if(err){
         console.log("Some error has occured")
     }
